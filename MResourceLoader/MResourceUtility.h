@@ -13,7 +13,7 @@
 
 #define MRAsset(obj,desc,returnValue) if(!obj){ NSAssert(0, desc);return (returnValue);}
 
-#define MRDEBUG
+//#define MRDEBUG
 
 #if defined (MRDEBUG) && defined (DEBUG)
     #define MRLog(...) NSLog(__VA_ARGS__)
