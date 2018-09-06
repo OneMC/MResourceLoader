@@ -111,7 +111,6 @@
     NSError *error = nil;
     
     [self.cacher setCacheData:reslutData range:MRMakeRange(self.currentOffset, unreadDataLength) error:&error];
-    [[MResourceCacheManager defaultManager] clearAllCache];
     NSAssert(!error, @"MResource Error : fetcher cache data error");
     self.currentOffset += unreadDataLength;
     [self.receiveData replaceBytesInRange:range withBytes:NULL length:0];

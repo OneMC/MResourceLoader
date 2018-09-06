@@ -226,10 +226,8 @@ static NSString * const ResourceCacheDirName = @"/MResourceCache/";
             folderSize += [self _fileSizeAtPath:fileAbsolutePath];
         }
         return folderSize;
-    } else {
-        MRLog(@"MResource: file is not exist");
-        return 0;
     }
+    return 0;
 }
 
 - (unsigned long long)_fileSizeAtPath:(NSString *)filePath{
@@ -238,9 +236,7 @@ static NSString * const ResourceCacheDirName = @"/MResourceCache/";
     if (isExist){
         unsigned long long fileSize = [[fileManager attributesOfItemAtPath:filePath error:nil] fileSize];
         return fileSize;
-    } else {
-        MRLog(@"MResource: file is not exist");
-        return 0;
     }
+    return 0;
 }
 @end
