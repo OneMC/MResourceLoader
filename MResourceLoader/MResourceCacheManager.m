@@ -193,6 +193,8 @@ static NSString * const ResourceCacheDirName = @"/MResourceCache/";
     BOOL suc = [fileManager removeItemAtPath:filePath error:&error];
     if (!suc || error) {
         MRLog(@"MResource: delet cache : %@",error);
+    } else {
+        MRLog(@"MResource: delet cache : %@",filePath);
     }
     [lock unlock];
     return suc;
