@@ -12,10 +12,8 @@
 #import "MResourceCacheManager.h"
 
 @interface ViewController ()
-@property (nonatomic, strong) AVURLAsset *asset;
-@property (nonatomic, strong) AVPlayerItem *playitem;
 @property (nonatomic, strong) AVPlayer *player;
-@property (nonatomic, strong) AVPlayerLayer *playLayer;
+@property (nonatomic, strong) AVPlayerItem *playitem;
 @property (nonatomic, strong) MResourceLoader *loader;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @end
@@ -31,18 +29,18 @@
 //    NSURL *url = [NSURL URLWithString:@"https://media.w3.org/2010/05/sintel/trailer.mp4"];
 //    NSURL *url = [NSURL URLWithString:@"http://yun.it7090.com/video/XHLaunchAd/video03.mp4"];
     NSURL *url = [NSURL URLWithString:@"http://www.w3school.com.cn/example/html5/mov_bbb.mp4"];
-
-    url = [MResourceScheme mrSchemeURL:url];
-    self.asset = [[AVURLAsset alloc] initWithURL:url options:nil];
-    self.loader = [MResourceLoader new];
-    [self.asset.resourceLoader setDelegate:self.loader queue:dispatch_get_main_queue()];
-    self.playitem = [AVPlayerItem playerItemWithAsset:self.asset];
     
+    self.loader = [MResourceLoader new];
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:[MResourceScheme mrSchemeURL:url] options:nil];
+    [asset.resourceLoader setDelegate:self.loader queue:dispatch_get_main_queue()];
+    
+    self.playitem = [AVPlayerItem playerItemWithAsset:asset];
     self.player = [AVPlayer playerWithPlayerItem:self.playitem];
-    self.playLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    self.playLayer.frame = CGRectMake(0, 100, self.view.bounds.size.width, 400);
-    self.playLayer.backgroundColor = [UIColor blackColor].CGColor;
-    [self.view.layer addSublayer:self.playLayer];
+    AVPlayerLayer *playLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+    playLayer.frame = CGRectMake(0, 100, self.view.bounds.size.width, 400);
+    playLayer.backgroundColor = [UIColor blackColor].CGColor;
+    [self.view.layer addSublayer:playLayer];
+    [self _addTimeObserver];
 }
 
 - (void)_addTimeObserver {
@@ -64,7 +62,6 @@
 
 - (IBAction)play:(id)sender {
     [self _configVideoPlayer];
-    [self _addTimeObserver];
     [self.player play];
 }
 
