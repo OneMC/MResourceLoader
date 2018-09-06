@@ -35,8 +35,8 @@ static NSString * const ResourceCacheDirName = @"/MResourceCache/";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.maxDiskUsage = 1024 * 1 * 1; // 100M
-        self.maxCacheAge = 60 * 60 * 24 *7;    // A Weak
+        self.maxDiskUsage = 1024 * 1024 * 100; // 100M
+        self.maxCacheAge = 60 * 60 * 24 * 7;   // A Weak
         self.handlerSet = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsWeakMemory capacity:0];
         [self setFolderPath:[NSHomeDirectory() stringByAppendingString:RelativeFilePath]];
     }
@@ -193,6 +193,8 @@ static NSString * const ResourceCacheDirName = @"/MResourceCache/";
     BOOL suc = [fileManager removeItemAtPath:filePath error:&error];
     if (!suc || error) {
         MRLog(@"MResource: delet cache : %@",error);
+    } else {
+        MRLog(@"MResource: delet cache : %@",filePath);
     }
     [lock unlock];
     return suc;
