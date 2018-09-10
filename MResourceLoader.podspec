@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   s.requires_arc = true
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '6.0'
 
 end
