@@ -13,8 +13,9 @@
 #import "MResourceDataFetcher.h"
 
 @interface MResourceSessionManager()<NSURLSessionDataDelegate>
-@property (nonatomic, strong) NSMapTable *pendingTask;
+@property (nonatomic, strong) NSMutableDictionary *pendingTask;
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) NSLock *lock;
 @end
 
 @implementation MResourceSessionManager
@@ -36,24 +37,41 @@
     self = [super init];
     if (self) {
         NSUInteger randomMax = 5;
-        self.pendingTask = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsStrongMemory
-                                                 valueOptions:NSPointerFunctionsWeakMemory
-                                                     capacity:randomMax];
+        self.pendingTask = [NSMutableDictionary dictionaryWithCapacity:randomMax];
         self.operationQueue = [[NSOperationQueue alloc] init];
         self.operationQueue.maxConcurrentOperationCount = 1;
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:self.operationQueue];
         _session = session;
+        self.lock = [[NSLock alloc] init];
+        self.lock.name = @"MResourceSessionManagerLock";
     }
     return self;
 }
 
-- (void)setDelegate:(id<NSURLSessionDataDelegate>)deleate forTask:(NSURLSessionDataTask*)task {
-    [self.pendingTask setObject:deleate forKey:@(task.taskIdentifier)];
+- (void)setDelegate:(id<NSURLSessionDataDelegate>)delegate forTask:(NSURLSessionDataTask*)task {
+    NSParameterAssert(task);
+    NSParameterAssert(delegate);
+    
+    [self.lock lock];
+    [self.pendingTask setObject:delegate forKey:@(task.taskIdentifier)];
+    [self.lock unlock];
 }
 
 - (id<NSURLSessionDataDelegate>)_delegateForTask:(NSURLSessionTask*)task {
-    return [self.pendingTask objectForKey:@(task.taskIdentifier)];
+    NSParameterAssert(task);
+    [self.lock lock];
+    id<NSURLSessionDataDelegate> delegate = nil;
+    delegate = [self.pendingTask objectForKey:@(task.taskIdentifier)];
+    [self.lock unlock];
+    return delegate;
+}
+
+- (void)_removeDelegateForTask:(NSURLSessionTask *)task {
+    NSParameterAssert(task);
+    [self.lock lock];
+    [self.pendingTask removeObjectForKey:@(task.taskIdentifier)];
+    [self.lock unlock];
 }
 
 #pragma mark - NSURLSessionTaskDelegate
@@ -62,6 +80,7 @@ didCompleteWithError:(nullable NSError *)error {
     id<NSURLSessionDataDelegate>delegate = [self _delegateForTask:task];
     if ([delegate respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
         [delegate URLSession:session task:task didCompleteWithError:error];
+        [self _removeDelegateForTask:task];
     }
 }
 

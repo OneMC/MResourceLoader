@@ -20,15 +20,13 @@
 @property (nonatomic, strong) NSMutableArray<MResourceDataCreator*> *pendingDataCreators;
 @property (nonatomic, strong, readonly) AVAssetResourceLoadingRequest *loadingRequest;
 @property (nonatomic, strong) MResourceCacher *cacher;
+@property (nonatomic, strong) NSLock *lock;
 @end
 
 @implementation MResourceDataFiller
 
 - (void)dealloc {
-    [self.pendingDataCreators enumerateObjectsUsingBlock:^(MResourceDataCreator * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj stop];
-    }];
-    
+    [self _cleanDataCreators];
     MResourceCacheManager *cacheManager = [MResourceCacheManager defaultManager];
     if (cacheManager.currentDiskUsage > cacheManager.maxDiskUsage) {
         [cacheManager clearOlderCache];
@@ -39,6 +37,8 @@
     self = [super init];
     if (self) {
         _loadingRequest = loadingRequest;
+        _lock = [[NSLock alloc] init];
+        _lock.name = @"MResourceDataFillerLock";
     }
     return self;
 }
@@ -59,7 +59,7 @@
         return;
     }
     
-    NSUInteger expectDataLength = dataRequest.requestedLength - (dataRequest.currentOffset - dataRequest.requestedOffset);
+    NSUInteger expectDataLength = (NSUInteger)(dataRequest.requestedLength - (dataRequest.currentOffset - dataRequest.requestedOffset));
     MRRange expectDataRange = MRMakeRange(currentOffset, expectDataLength);
     
     if (!self.cacher.contentInfo) {
@@ -72,7 +72,7 @@
         if (localDataRange.location == expectDataRange.location) {
             [self _readDataFromLocal:localDataRange];
         } else {
-            MRRange dataFragment = MRMakeRange(currentOffset, localDataRange.location - expectDataRange.location);
+            MRRange dataFragment = MRMakeRange(currentOffset, (NSUInteger)(localDataRange.location - expectDataRange.location));
             [self _fetchDataFromRemote:dataFragment];
         }
     } else {
@@ -88,7 +88,7 @@
     MResourceDataReader *reader = [[MResourceDataReader alloc] initWithURL:url];
     reader.delegate = self;
     reader.cacher = self.cacher;
-    [self.pendingDataCreators addObject:reader];
+    [self _addDataCreator:reader];
     [reader startCreateDataInRange:range];
 }
 
@@ -100,7 +100,7 @@
     MResourceDataFetcher *fetcher = [[MResourceDataFetcher alloc] initWithURL:url];
     fetcher.delegate = self;
     fetcher.cacher = self.cacher;
-    [self.pendingDataCreators addObject:fetcher];
+    [self _addDataCreator:fetcher];
     [fetcher startCreateDataInRange:range];
 }
 
@@ -128,6 +128,26 @@
     }
 }
 
+- (void)_addDataCreator:(MResourceDataCreator*)dataCreator {
+    [self.lock lock];
+    [self.pendingDataCreators addObject:dataCreator];
+    [self.lock unlock];
+}
+
+- (void)_removeDataCreator:(MResourceDataCreator*)dataCreator {
+    [self.lock lock];
+    [self.pendingDataCreators removeObject:dataCreator];
+    [self.lock unlock];
+}
+
+- (void)_cleanDataCreators {
+    [self.lock lock];
+    [self.pendingDataCreators enumerateObjectsUsingBlock:^(MResourceDataCreator * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj stop];
+    }];
+    [self.lock unlock];
+}
+
 #pragma mark - MResourceCreateDataDelegate
 - (void)dataCreator:(MResourceDataCreator*)creator didCreateContentInfo:(MResourceContentInfo*)info {
     [self _fullfillContentInfo:info];
@@ -141,7 +161,7 @@
 
 - (void)dataCreator:(MResourceDataCreator *)creator didFinishWithError:(NSError*)error {
     [creator stop];
-    [self.pendingDataCreators removeObject:creator];
+    [self _removeDataCreator:creator];
     
     if (error) {
         [self _finishFillWithError:error];
