@@ -19,6 +19,6 @@
 
 + (instancetype)shareSession;
 
-- (void)setDelegate:(id<NSURLSessionDataDelegate>)deleate forTask:(NSURLSessionDataTask*)task;
+- (void)setDelegate:(id<NSURLSessionDataDelegate>)delegate forTask:(NSURLSessionDataTask*)task;
 
 @end
