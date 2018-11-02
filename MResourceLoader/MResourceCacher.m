@@ -54,7 +54,7 @@
             MRMaxRange(range) > fillDataRange.location) {
             MRLong location = MAX(fillDataRange.location, range.location);
             MRLong offset = MIN(MRMaxRange(fillDataRange), MRMaxRange(range));
-            return MRMakeRange(location, offset - location);
+            return MRMakeRange(location, (NSUInteger)(offset - location));
         }
     }
     return MRMakeRange(0, 0);

@@ -27,7 +27,7 @@
 }
 
 + (NSString*)stringFromRange:(MRRange) range {
-    return [NSString stringWithFormat:@"%lld-%ld",range.location,range.length];
+    return [NSString stringWithFormat:@"%lld-%ld",range.location,(long)range.length];
 }
 
 - (MRRange)MRRange {
