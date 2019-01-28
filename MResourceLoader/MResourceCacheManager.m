@@ -125,7 +125,9 @@ static NSString * const ResourceCacheDirName = @"/MResourceCache/";
     
     return deletedFile;
 }
-
+/**
+ 不能直接把整个缓存文件夹删掉，有可能正在播放视频往缓存文件夹中写内容，如果此时删掉会出现数据同步问题；
+ */
 - (BOOL)clearAllCache {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *url = [NSURL fileURLWithPath:self.cachePath];
@@ -134,9 +136,10 @@ static NSString * const ResourceCacheDirName = @"/MResourceCache/";
                                            includingPropertiesForKeys:nil
                                                               options:0
                                                                 error:NULL];
-    BOOL deletedFile = NO;
+    BOOL deletedFile = YES;
     for (NSString *url in fileUrls) {
-        deletedFile = deletedFile || [self _deleteFileForPath:url];
+        BOOL tempBool = [self _deleteFileForPath:url];
+        deletedFile = deletedFile && tempBool;
     }
     return deletedFile;
 }
