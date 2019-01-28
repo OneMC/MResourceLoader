@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   s.name         = "MResourceLoader"
 
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
 
   s.summary      = "MResourceLoader use for AVPlayer loading resource"
 
