@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   s.name         = "MResourceLoader"
 
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
 
   s.summary      = "MResourceLoader use for AVPlayer loading resource"
 
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   s.requires_arc = true
-  s.platform     = :ios, '6.0'
+  s.platform     = :ios, '9.0'
 
 end

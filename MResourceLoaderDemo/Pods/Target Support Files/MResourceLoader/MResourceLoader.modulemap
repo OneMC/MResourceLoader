@@ -1,0 +1,6 @@
+framework module MResourceLoader {
+  umbrella header "MResourceLoader-umbrella.h"
+
+  export *
+  module * { export * }
+}

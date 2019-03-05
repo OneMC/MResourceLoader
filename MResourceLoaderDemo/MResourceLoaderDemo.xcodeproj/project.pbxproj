@@ -11,19 +11,8 @@
 		548E3D712135701000E85629 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D702135701000E85629 /* ViewController.m */; };
 		548E3D762135701100E85629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548E3D752135701100E85629 /* Assets.xcassets */; };
 		548E3D7C2135701100E85629 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D7B2135701100E85629 /* main.m */; };
-		548E3D9C213570B800E85629 /* MResourceSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D83213570B800E85629 /* MResourceSessionManager.m */; };
-		548E3D9D213570B800E85629 /* MResourceScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D88213570B800E85629 /* MResourceScheme.m */; };
-		548E3D9E213570B800E85629 /* MResourceFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D8B213570B800E85629 /* MResourceFileHandler.m */; };
-		548E3D9F213570B800E85629 /* MResourceDataCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D8C213570B800E85629 /* MResourceDataCreator.m */; };
-		548E3DA0213570B800E85629 /* MResourceDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D8E213570B800E85629 /* MResourceDataReader.m */; };
-		548E3DA1213570B800E85629 /* MResourceDataFiller.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D8F213570B800E85629 /* MResourceDataFiller.m */; };
-		548E3DA2213570B800E85629 /* MResourceDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D90213570B800E85629 /* MResourceDataFetcher.m */; };
-		548E3DA3213570B800E85629 /* MResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D92213570B800E85629 /* MResourceLoader.m */; };
-		548E3DA4213570B800E85629 /* MResourceCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D93213570B800E85629 /* MResourceCacheManager.m */; };
-		548E3DA5213570B800E85629 /* MResourceContentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D96213570B800E85629 /* MResourceContentInfo.m */; };
-		548E3DA6213570B800E85629 /* MResourceCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D97213570B800E85629 /* MResourceCacher.m */; };
-		548E3DA7213570B800E85629 /* NSString+MRResourceUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 548E3D9B213570B800E85629 /* NSString+MRResourceUtility.m */; };
 		548E3DA9213570E700E85629 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548E3DA8213570E700E85629 /* ViewController.xib */; };
+		B6E68FCC08C983A4A7C5C38C /* Pods_MResourceLoaderDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07C54FEF28B80E99BBEBF3 /* Pods_MResourceLoaderDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,32 +24,10 @@
 		548E3D752135701100E85629 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		548E3D7A2135701100E85629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		548E3D7B2135701100E85629 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		548E3D83213570B800E85629 /* MResourceSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceSessionManager.m; sourceTree = "<group>"; };
-		548E3D84213570B800E85629 /* MResourceDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceDataFetcher.h; sourceTree = "<group>"; };
-		548E3D85213570B800E85629 /* MResourceUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceUtility.h; sourceTree = "<group>"; };
-		548E3D86213570B800E85629 /* MResourceCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceCacheManager.h; sourceTree = "<group>"; };
-		548E3D87213570B800E85629 /* MResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceLoader.h; sourceTree = "<group>"; };
-		548E3D88213570B800E85629 /* MResourceScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceScheme.m; sourceTree = "<group>"; };
-		548E3D89213570B800E85629 /* MResourceCacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceCacher.h; sourceTree = "<group>"; };
-		548E3D8A213570B800E85629 /* MResourceContentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceContentInfo.h; sourceTree = "<group>"; };
-		548E3D8B213570B800E85629 /* MResourceFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceFileHandler.m; sourceTree = "<group>"; };
-		548E3D8C213570B800E85629 /* MResourceDataCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceDataCreator.m; sourceTree = "<group>"; };
-		548E3D8D213570B800E85629 /* NSString+MRResourceUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MRResourceUtility.h"; sourceTree = "<group>"; };
-		548E3D8E213570B800E85629 /* MResourceDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceDataReader.m; sourceTree = "<group>"; };
-		548E3D8F213570B800E85629 /* MResourceDataFiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceDataFiller.m; sourceTree = "<group>"; };
-		548E3D90213570B800E85629 /* MResourceDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceDataFetcher.m; sourceTree = "<group>"; };
-		548E3D91213570B800E85629 /* MResourceSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceSessionManager.h; sourceTree = "<group>"; };
-		548E3D92213570B800E85629 /* MResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceLoader.m; sourceTree = "<group>"; };
-		548E3D93213570B800E85629 /* MResourceCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceCacheManager.m; sourceTree = "<group>"; };
-		548E3D94213570B800E85629 /* MResourceDataCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceDataCreator.h; sourceTree = "<group>"; };
-		548E3D95213570B800E85629 /* MResourceFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceFileHandler.h; sourceTree = "<group>"; };
-		548E3D96213570B800E85629 /* MResourceContentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceContentInfo.m; sourceTree = "<group>"; };
-		548E3D97213570B800E85629 /* MResourceCacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResourceCacher.m; sourceTree = "<group>"; };
-		548E3D98213570B800E85629 /* MResourceScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceScheme.h; sourceTree = "<group>"; };
-		548E3D99213570B800E85629 /* MResourceDataFiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceDataFiller.h; sourceTree = "<group>"; };
-		548E3D9A213570B800E85629 /* MResourceDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResourceDataReader.h; sourceTree = "<group>"; };
-		548E3D9B213570B800E85629 /* NSString+MRResourceUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MRResourceUtility.m"; sourceTree = "<group>"; };
 		548E3DA8213570E700E85629 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		8A07C54FEF28B80E99BBEBF3 /* Pods_MResourceLoaderDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MResourceLoaderDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95FF0C8C1ED01D4571F96344 /* Pods-MResourceLoaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MResourceLoaderDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MResourceLoaderDemo/Pods-MResourceLoaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9B72419C359601DB3957D368 /* Pods-MResourceLoaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MResourceLoaderDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MResourceLoaderDemo/Pods-MResourceLoaderDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E68FCC08C983A4A7C5C38C /* Pods_MResourceLoaderDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19219CA28657AF736E386331 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A07C54FEF28B80E99BBEBF3 /* Pods_MResourceLoaderDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		548E3D602135701000E85629 = {
 			isa = PBXGroup;
 			children = (
 				548E3D6B2135701000E85629 /* MResourceLoaderDemo */,
 				548E3D6A2135701000E85629 /* Products */,
+				9F24E34FFA565ECA803F47D3 /* Pods */,
+				19219CA28657AF736E386331 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +76,6 @@
 				548E3D6F2135701000E85629 /* ViewController.h */,
 				548E3D702135701000E85629 /* ViewController.m */,
 				548E3DA8213570E700E85629 /* ViewController.xib */,
-				548E3D82213570B800E85629 /* MResourceLoader */,
 				548E3D752135701100E85629 /* Assets.xcassets */,
 				548E3D7A2135701100E85629 /* Info.plist */,
 				548E3D7B2135701100E85629 /* main.m */,
@@ -106,37 +83,13 @@
 			path = MResourceLoaderDemo;
 			sourceTree = "<group>";
 		};
-		548E3D82213570B800E85629 /* MResourceLoader */ = {
+		9F24E34FFA565ECA803F47D3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				548E3D87213570B800E85629 /* MResourceLoader.h */,
-				548E3D92213570B800E85629 /* MResourceLoader.m */,
-				548E3D86213570B800E85629 /* MResourceCacheManager.h */,
-				548E3D93213570B800E85629 /* MResourceCacheManager.m */,
-				548E3D95213570B800E85629 /* MResourceFileHandler.h */,
-				548E3D8B213570B800E85629 /* MResourceFileHandler.m */,
-				548E3D8D213570B800E85629 /* NSString+MRResourceUtility.h */,
-				548E3D99213570B800E85629 /* MResourceDataFiller.h */,
-				548E3D8F213570B800E85629 /* MResourceDataFiller.m */,
-				548E3D84213570B800E85629 /* MResourceDataFetcher.h */,
-				548E3D90213570B800E85629 /* MResourceDataFetcher.m */,
-				548E3D9A213570B800E85629 /* MResourceDataReader.h */,
-				548E3D8E213570B800E85629 /* MResourceDataReader.m */,
-				548E3D91213570B800E85629 /* MResourceSessionManager.h */,
-				548E3D83213570B800E85629 /* MResourceSessionManager.m */,
-				548E3D94213570B800E85629 /* MResourceDataCreator.h */,
-				548E3D8C213570B800E85629 /* MResourceDataCreator.m */,
-				548E3D8A213570B800E85629 /* MResourceContentInfo.h */,
-				548E3D96213570B800E85629 /* MResourceContentInfo.m */,
-				548E3D89213570B800E85629 /* MResourceCacher.h */,
-				548E3D97213570B800E85629 /* MResourceCacher.m */,
-				548E3D98213570B800E85629 /* MResourceScheme.h */,
-				548E3D88213570B800E85629 /* MResourceScheme.m */,
-				548E3D9B213570B800E85629 /* NSString+MRResourceUtility.m */,
-				548E3D85213570B800E85629 /* MResourceUtility.h */,
+				95FF0C8C1ED01D4571F96344 /* Pods-MResourceLoaderDemo.debug.xcconfig */,
+				9B72419C359601DB3957D368 /* Pods-MResourceLoaderDemo.release.xcconfig */,
 			);
-			name = MResourceLoader;
-			path = ../../MResourceLoader;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 548E3D7F2135701100E85629 /* Build configuration list for PBXNativeTarget "MResourceLoaderDemo" */;
 			buildPhases = (
+				66489A679350433B79E1ABB3 /* [CP] Check Pods Manifest.lock */,
 				548E3D652135701000E85629 /* Sources */,
 				548E3D662135701000E85629 /* Frameworks */,
 				548E3D672135701000E85629 /* Resources */,
+				63ED3E6F1A5E9277D64C4874 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,26 +158,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		63ED3E6F1A5E9277D64C4874 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MResourceLoaderDemo/Pods-MResourceLoaderDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MResourceLoader/MResourceLoader.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MResourceLoader.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MResourceLoaderDemo/Pods-MResourceLoaderDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66489A679350433B79E1ABB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MResourceLoaderDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		548E3D652135701000E85629 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				548E3D9F213570B800E85629 /* MResourceDataCreator.m in Sources */,
-				548E3D9D213570B800E85629 /* MResourceScheme.m in Sources */,
-				548E3DA0213570B800E85629 /* MResourceDataReader.m in Sources */,
-				548E3DA5213570B800E85629 /* MResourceContentInfo.m in Sources */,
-				548E3D9C213570B800E85629 /* MResourceSessionManager.m in Sources */,
-				548E3D9E213570B800E85629 /* MResourceFileHandler.m in Sources */,
-				548E3DA2213570B800E85629 /* MResourceDataFetcher.m in Sources */,
-				548E3DA6213570B800E85629 /* MResourceCacher.m in Sources */,
 				548E3D712135701000E85629 /* ViewController.m in Sources */,
 				548E3D7C2135701100E85629 /* main.m in Sources */,
-				548E3DA1213570B800E85629 /* MResourceDataFiller.m in Sources */,
-				548E3DA3213570B800E85629 /* MResourceLoader.m in Sources */,
-				548E3DA4213570B800E85629 /* MResourceCacheManager.m in Sources */,
 				548E3D6E2135701000E85629 /* AppDelegate.m in Sources */,
-				548E3DA7213570B800E85629 /* NSString+MRResourceUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +331,7 @@
 		};
 		548E3D802135701100E85629 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95FF0C8C1ED01D4571F96344 /* Pods-MResourceLoaderDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -362,6 +353,7 @@
 		};
 		548E3D812135701100E85629 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B72419C359601DB3957D368 /* Pods-MResourceLoaderDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

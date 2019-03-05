@@ -1,0 +1,16 @@
+PODS:
+  - MResourceLoader (0.0.5)
+
+DEPENDENCIES:
+  - MResourceLoader (from `../`)
+
+EXTERNAL SOURCES:
+  MResourceLoader:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MResourceLoader: 25f53caac46cc7b6ba3a8f594346f78f7daf5e75
+
+PODFILE CHECKSUM: 3d195db4e81570e84e16108886922d3a59d5753a
+
+COCOAPODS: 1.5.3
